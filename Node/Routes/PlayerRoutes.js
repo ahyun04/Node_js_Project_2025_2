@@ -3,6 +3,8 @@ const fs = require('fs');
 const { resourceLimits } = require('worker_threads');
 const router = express.Router();
 
+const resourceFilePath = 'resources.json';
+
 const initalResources = {
     metal : 500,
     crystal : 300,
@@ -39,7 +41,7 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res) => {
     const {name, password} = req.body;
 
-    if(global.players[name])
+    if(!global.players[name])
     {
         return res.status(404).send({message : '플레이어를 찾을 수 없습니다.'});
     }
@@ -48,6 +50,8 @@ router.post('/login', (req, res) => {
     {
         return res.status(401).send({massage : '비밀번호가 틀렸습니다.'});
     }
+
+    const player = global.players[name];
 
     const reqponsePayLoad = {
         playerName : player.playerName,
@@ -58,6 +62,11 @@ router.post('/login', (req, res) => {
 
     console.log("Login response playload : ", reqponsePayLoad);
     res.send(reqponsePayLoad);
-})
+});
+
+function saveReources()
+{
+    fs.writeFileSync(resourceFilePath, JSON.stringify(global.players, null, 2));
+}
 
 module.exports = router;
