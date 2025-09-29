@@ -42,7 +42,7 @@ public class GameController : MonoBehaviour
         if(playerModel != null)
         {
             gameView.SetPlayerName(playerModel.playerName);
-            gameView.UpdateResources(playerModel.metal, playerModel.crystal, playerModel.deuterium);
+            gameView.UpdateResources(playerModel.metal, playerModel.crystal, playerModel.deuteriurm);
         }
     }
 

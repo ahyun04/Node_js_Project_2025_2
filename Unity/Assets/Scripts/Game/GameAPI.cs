@@ -10,7 +10,7 @@ using Unity.VisualScripting;
 
 public class GameAPI : MonoBehaviour
 {
-    private string baseUrl = "http://localhost:4000/api/register";                   //Node.js 서버의 URL
+    private string baseUrl = "http://localhost:4000/api";                   //Node.js 서버의 URL
 
     //플레이어 레지스터
     public IEnumerator RegisterPlayer(string playerName, string password)
@@ -72,8 +72,8 @@ public class GameAPI : MonoBehaviour
                     {
                         metal = Convert.ToInt32(responseData["metal"]),
                         crystal = Convert.ToInt32(responseData["crystal"]),
-                        deuterium = Convert.ToInt32(responseData["deuterium"]),
-                        Planes = new List<PlaneModel>()
+                        deuteriurm = Convert.ToInt32(responseData["deuterium"]),
+                        Planets = new List<PlanetModel>()
                     };
                     onSuccess?.Invoke(playerMode);
                     Debug.Log("Login successful");

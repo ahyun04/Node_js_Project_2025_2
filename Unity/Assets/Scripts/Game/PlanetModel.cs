@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [SerializeField]
-public class PlaneModel
+public class PlanetModel
 {
     public int id;
     public string name;
@@ -11,7 +11,7 @@ public class PlaneModel
     public int crystal;
     public int deuterium;
 
-    public PlaneModel(int id, string name)
+    public PlanetModel(int id, string name)
     {
         this.id = id;
         this.name = name;
