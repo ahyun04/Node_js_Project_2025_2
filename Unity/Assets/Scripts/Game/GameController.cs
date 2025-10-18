@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
     {
         yield return gameAPI.LoginPlayer(playerName, password, player =>
         {
-            playerModel = player;
+            playerModel = player; 
             UpdateResourcesDisplay();
         });
     }

@@ -15,7 +15,7 @@ public class GameAPI : MonoBehaviour
     //플레이어 레지스터
     public IEnumerator RegisterPlayer(string playerName, string password)
     {
-        var requestData = new { name = playerName, password = password };
+        var requestData = new {name = playerName, password = password};
         string jsonData = JsonConvert.SerializeObject(requestData);
         Debug.Log($"Registering player: {jsonData}");
 
@@ -28,7 +28,7 @@ public class GameAPI : MonoBehaviour
 
             yield return request.SendWebRequest();
 
-            if (request.result != UnityWebRequest.Result.Success)
+            if(request.result != UnityWebRequest.Result.Success)
             {
                 Debug.LogError($"Error registering player : {request.result}");
             }
@@ -42,7 +42,7 @@ public class GameAPI : MonoBehaviour
     //플레이어 로그인 메서드
     public IEnumerator LoginPlayer(string playerName, string password, Action<PlayerModel> onSuccess)
     {
-        var requestData = new { name = playerName, password = password };
+        var requestData = new {name = playerName , password = password};
         string jsonData = JsonConvert.SerializeObject(requestData);
 
         using (UnityWebRequest request = new UnityWebRequest($"{baseUrl}/login", "POST"))
@@ -78,9 +78,9 @@ public class GameAPI : MonoBehaviour
                     onSuccess?.Invoke(playerMode);
                     Debug.Log("Login successful");
                 }
-                catch (Exception ex)
+                catch (Exception ex) 
                 {
-                    Debug.LogError($"Error processing login responce : {ex.Message}");
+                    Debug.LogError($"Error processing login responce : {ex.Message}");  
                 }
             }
         }

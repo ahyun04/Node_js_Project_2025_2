@@ -5,8 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameView gameView;
-    public GameController gameController;
+    public GameController gameController;   
 
+    // Start is called before the first frame update
     void Start()
     {
         gameController = gameView.gameObject.AddComponent<GameController>();

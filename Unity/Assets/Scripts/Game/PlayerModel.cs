@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[SerializeField]
 
+[Serializable]
 public class PlayerModel
 {
-
     public string playerName;
     public int metal;
     public int crystal;
@@ -27,6 +26,6 @@ public class PlayerModel
         metal += 10;
         crystal += 5;
         deuteriurm += 2;
+
     }
-    
 }

@@ -18,23 +18,23 @@ public class GameView : MonoBehaviour
     public Button collectButton;
     public Button developButton;
     public Slider progressBar;
-
+    
 
     public void SetPlayerName(string name)
     {
-        playerNameText.text = name;
+        playerNameText.text = name; 
     }
 
     public void UpdateResources(int metal, int crystal, int deuterium)
     {
-        metalText.text = $"Metal : {metal}";
+        metalText.text = $"Metal : {metal}";    
         crystalText.text = $"Crystal : {crystal}";
         deuteriumText.text = $"deuterium : {deuterium}";
     }
 
     public void UpdateProgressBar(float value)
     {
-        progressBar.value = value;
+        progressBar.value = value;  
     }
 
     //버튼 클릭 리스너 설정 함수
@@ -67,12 +67,12 @@ public class GameView : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }
